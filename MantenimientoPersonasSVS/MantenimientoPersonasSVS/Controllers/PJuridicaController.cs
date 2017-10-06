@@ -48,8 +48,8 @@ namespace MantenimientoPersonasSVS.Controllers
         {
             PJuridica persona = new PJuridica();
             persona.ruc = datos["ruc"];
-            persona.ruc = datos["razonSocial"];
-            persona.ruc = datos["paginaURL"];
+            persona.razonSocial = datos["razonSocial"];
+            persona.paginaURL = datos["paginaURL"];
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];

@@ -78,7 +78,14 @@ namespace MantenimientoPersonasSVS.Servicios
             using (var db = new CtxSQLDBPersona())
             {
                 var persona = db.PJuridica.Find(pJuridica.ruc);
-                db.PJuridica.Remove(persona);
+
+                persona.ruc = pJuridica.ruc;
+                persona.razonSocial = pJuridica.razonSocial;
+                persona.paginaURL = pJuridica.paginaURL;
+                persona.direccion = pJuridica.direccion;
+                persona.telefono = pJuridica.telefono;
+                persona.correoElectronico = pJuridica.correoElectronico;
+
                 db.SaveChanges();
             }
         }
