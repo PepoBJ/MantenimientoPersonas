@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\PNaturalController.cs" />
     <Compile Include="DataAccess\CtxSQLDBPersona.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
