@@ -35,6 +35,7 @@
         <h2>Mantenimiento Personas Juridica</h2>
         <a href="#">Mantenimiento Personas Naturales</a>
         <a href="#">Mantenimiento Personas Juridicas</a>
+        <div class="nuevo"><a href="/PJuridica/Crear">Nuevo PJuridica</a></div>
         <table>
             <tr>
                 <td>RUC</td>
@@ -43,6 +44,7 @@
                 <td>DIRECCION</td>
                 <td>TELEFONO</td>
                 <td>CORREO</td>
+                <td>Acciones</td>
             </tr>
             @foreach (var item in ViewData["listaPJuridica"] as IEnumerable<MantenimientoPersonasSVS.Models.PJuridica>)
             {
@@ -53,7 +55,10 @@
                     <td><span>@item.direccion</span></td>
                     <td><span>@item.telefono</span></td>
                     <td><span>@item.correoElectronico</span></td>
-
+                    <td>
+                        <a href="/PJuridica/Editar">Editar</a>
+                        <a href="/PJuridica/Eliminar">Eliminar</a>
+                    </td>
                 </tr>
             }
         </table>
