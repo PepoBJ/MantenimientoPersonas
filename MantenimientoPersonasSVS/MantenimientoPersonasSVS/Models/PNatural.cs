@@ -47,5 +47,10 @@ namespace MantenimientoPersonasSVS.Models
             return null;
         }
 
+        public PNatural byKey()
+        {
+            return queryPersona.byKey(this);
+        }
+
     }
 }

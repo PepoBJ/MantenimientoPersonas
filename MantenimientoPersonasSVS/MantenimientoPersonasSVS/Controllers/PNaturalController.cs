@@ -9,9 +9,6 @@ namespace MantenimientoPersonasSVS.Controllers
 {
     public class PNaturalController : Controller
     {
-        
-        // GET: /PNatural/
-
         public ActionResult Listar()
         {
             PNatural persona = new PNatural();
@@ -21,13 +18,11 @@ namespace MantenimientoPersonasSVS.Controllers
         }
         public ActionResult Crear()
         {
-            //muestra el formulario
             return View();
         }
         [HttpPost]
         public ActionResult Crear(FormCollection datos)
         {
-            //insete ala persona
             PNatural persona = new PNatural();
             persona.dni = datos["dni"];
             persona.nombrePersona = datos["nombrePersona"];
@@ -43,24 +38,20 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
-
-
-
+            
             persona.insertar();
-            return View();
+            return RedirectToAction("Listar", "PNatural");
         }
-
-
-        public ActionResult Editar()
+        
+        public ActionResult Editar(string parametro)
         {
-            //muestra el formulario
-            return View();
+            PNatural persona = new PNatural();
+            persona.dni = parametro;
+            return View(persona.byKey());
         }
         [HttpPost]
         public ActionResult Editar(FormCollection datos)
         {
-            
-            //Edita ala persona
             PNatural persona = new PNatural();
             persona.dni = datos["dni"];
             persona.nombrePersona = datos["nombrePersona"];
@@ -76,11 +67,9 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
-
-
-
+            
             persona.editar();
-            return View();
+            return RedirectToAction("Listar", "PNatural");
         }
 
         public ActionResult Eliminar(string parametro)
@@ -89,10 +78,6 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.dni = parametro;
             persona.eliminar();
             return RedirectToAction("Listar", "PNatural");
-        }
-        
-
-     
-
+        }        
     }
 }

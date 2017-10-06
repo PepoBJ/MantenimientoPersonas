@@ -9,6 +9,21 @@ namespace MantenimientoPersonasSVS.Servicios
 {
     public class QPersona
     {
+        public PJuridica byKey(PJuridica pJuridica)
+        {
+            using (var db = new CtxSQLDBPersona())
+            {
+                return db.PJuridica.Find(pJuridica.ruc);
+            }
+        }
+        public PNatural byKey(PNatural pNatrual)
+        {
+            using (var db = new CtxSQLDBPersona())
+            {
+                return db.PNaturales.Find(pNatrual.dni);
+            }
+        }
+
         public List<PNatural> obtenerTodos(PNatural pNatural)
         {
             using (var db = new CtxSQLDBPersona())
@@ -63,7 +78,14 @@ namespace MantenimientoPersonasSVS.Servicios
             using (var db = new CtxSQLDBPersona())
             {
                 var persona = db.PJuridica.Find(pJuridica.ruc);
-                db.PJuridica.Remove(persona);
+
+                persona.ruc = pJuridica.ruc;
+                persona.razonSocial = pJuridica.razonSocial;
+                persona.paginaURL = pJuridica.paginaURL;
+                persona.direccion = pJuridica.direccion;
+                persona.telefono = pJuridica.telefono;
+                persona.correoElectronico = pJuridica.correoElectronico;
+
                 db.SaveChanges();
             }
         }
