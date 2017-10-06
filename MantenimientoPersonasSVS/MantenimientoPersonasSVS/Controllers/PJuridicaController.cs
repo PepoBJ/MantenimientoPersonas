@@ -10,9 +10,6 @@ namespace MantenimientoPersonasSVS.Controllers
 {
     public class PJuridicaController : Controller
     {
-        //
-        // GET: /PJuridica/
-
         public ActionResult Listar()
         {
             PJuridica persona = new PJuridica();
@@ -20,9 +17,9 @@ namespace MantenimientoPersonasSVS.Controllers
 
             return View();
         }
-        public ActionResult Crear() { 
+        public ActionResult Crear() 
+        { 
          
-            //muestra el formulario
             return View();
         }
         [HttpPost]
@@ -37,31 +34,28 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
 
-            //muestra el formulario
             persona.insertar();
-            return View();
+            return RedirectToAction("Listar", "PJuridica");
         }
-        public ActionResult Editar()
+        public ActionResult Editar(string parametro)
         {
-
-            //muestra el formulario
-            return View();
+            PJuridica persona = new PJuridica();
+            persona.ruc = parametro;
+            return View(persona.byKey());
         }
         [HttpPost]
         public ActionResult Editar(FormCollection datos)
         {
-            //sobre carga de inyeccion de datos 
             PJuridica persona = new PJuridica();
             persona.ruc = datos["ruc"];
-            persona.ruc = datos["razonSocial"];
-            persona.ruc = datos["paginaURL"];
+            persona.razonSocial = datos["razonSocial"];
+            persona.paginaURL = datos["paginaURL"];
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
 
-            //muestra el formulario
             persona.editar();
-            return View();
+            return RedirectToAction("Listar", "PJuridica");
         }
         public ActionResult Eliminar(string parametro)
         {

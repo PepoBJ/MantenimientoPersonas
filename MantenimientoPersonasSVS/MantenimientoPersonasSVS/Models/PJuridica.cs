@@ -52,5 +52,10 @@ namespace MantenimientoPersonasSVS.Models
             return queryPersona.obtenerTodos(personaJuridica);
             
         }
+
+        public PJuridica byKey()
+        {
+            return queryPersona.byKey(this);
+        }
     }
 }
