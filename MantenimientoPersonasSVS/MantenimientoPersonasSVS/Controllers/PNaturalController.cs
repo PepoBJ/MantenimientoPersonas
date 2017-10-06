@@ -32,14 +32,14 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.dni = datos["dni"];
             persona.nombrePersona = datos["nombrePersona"];
             persona.apellidoPersona = datos["apellidoPersona"];
-            
+           
             string fechaN = datos["fechaNacimiento"];
             string[] arrayFecha = fechaN.Split('/');
             string ano = arrayFecha[0];
             string mes = arrayFecha[1];
             string dia = arrayFecha[2];
             persona.fechaNacimiento = new DateTime(int.Parse(ano), int.Parse(mes), int.Parse(dia));
-
+            persona.sexo = datos["sexo"];
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
@@ -72,14 +72,14 @@ namespace MantenimientoPersonasSVS.Controllers
             string mes = arrayFecha[1];
             string dia = arrayFecha[2];
             persona.fechaNacimiento = new DateTime(int.Parse(ano), int.Parse(mes), int.Parse(dia));
-
+            persona.sexo = datos["sexo"];
             persona.direccion = datos["direccion"];
             persona.telefono = datos["telefono"];
             persona.correoElectronico = datos["correoElectronico"];
 
 
 
-            persona.insertar();
+            persona.editar();
             return View();
         }
 
