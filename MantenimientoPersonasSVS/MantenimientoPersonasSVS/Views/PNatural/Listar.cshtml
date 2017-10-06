@@ -35,6 +35,7 @@
         <h2>Mantenimiento Personas Natural</h2>
         <a href="#">Mantenimiento Personas Naturales</a>
         <a href="#">Mantenimiento Personas Juridicas</a>
+        <div class="nuevo"><a href="/PNatural/Crear">Nuevo PNatural</a></div>
         <table>
             <tr>
                 <td>DNI</td>
@@ -45,6 +46,7 @@
                 <td>DIREECION</td>
                 <td>TELEFONO</td>
                 <td>CORREO ELECTRONICO</td>
+                <td>Acciones</td>
             </tr>
             @foreach (var item in ViewData["listaPNatural"] as IEnumerable<MantenimientoPersonasSVS.Models.PNatural>)
             {
@@ -58,6 +60,10 @@
                     <td><span>@item.direccion</span></td>
                     <td><span>@item.telefono</span></td>
                     <td><span>@item.correoElectronico</span></td>
+                    <td>
+                        <a href="/PNatural/Editar">Editar</a>
+                        <a href="/PNatural/Eliminar">Eliminar</a>
+                    </td>
                 </tr>
 
 
