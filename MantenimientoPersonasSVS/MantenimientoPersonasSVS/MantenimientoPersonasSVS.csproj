@@ -157,6 +157,12 @@
   <ItemGroup>
     <Content Include="Views\PNatural\Listar.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PNatural\Crear.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PJuridica\Crear.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
