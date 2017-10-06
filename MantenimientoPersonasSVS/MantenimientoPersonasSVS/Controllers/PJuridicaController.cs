@@ -13,7 +13,7 @@ namespace MantenimientoPersonasSVS.Controllers
         //
         // GET: /PJuridica/
 
-        public ActionResult ListaPersonaJuridica()
+        public ActionResult Listar()
         {
             PJuridica persona = new PJuridica();
             ViewData["listaPJuridica"] = persona.listar(persona);
@@ -31,8 +31,11 @@ namespace MantenimientoPersonasSVS.Controllers
             PJuridica persona = new PJuridica();
 
             persona.ruc = datos["ruc"];
-            persona.ruc = datos["razonSocial"];
-            persona.ruc = datos["paginaURL"];
+            persona.razonSocial = datos["razonSocial"];
+            persona.paginaURL = datos["paginaURL"];
+            persona.direccion = datos["direccion"];
+            persona.telefono = datos["telefono"];
+            persona.correoElectronico = datos["correoElectronico"];
 
             //muestra el formulario
             persona.insertar();
@@ -52,6 +55,9 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.ruc = datos["ruc"];
             persona.ruc = datos["razonSocial"];
             persona.ruc = datos["paginaURL"];
+            persona.direccion = datos["direccion"];
+            persona.telefono = datos["telefono"];
+            persona.correoElectronico = datos["correoElectronico"];
 
             //muestra el formulario
             persona.editar();
