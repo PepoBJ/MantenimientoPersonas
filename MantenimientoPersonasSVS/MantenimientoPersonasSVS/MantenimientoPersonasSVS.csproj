@@ -158,6 +158,7 @@
     <Content Include="Views\PNatural\Listar.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\PJuridica\Listar.cshtml" />
     <Content Include="Views\PNatural\Crear.cshtml" />
   </ItemGroup>
   <ItemGroup>

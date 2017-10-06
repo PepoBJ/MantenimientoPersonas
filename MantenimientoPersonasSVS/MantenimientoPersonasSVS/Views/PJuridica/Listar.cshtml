@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento Persona</title>
+    <style>
+        * {
+            color: steelblue;
+        }
+
+        #contenido {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            line-height: 3;
+            border-bottom: 1px solid steelblue;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFF;
+            background: steelblue;
+            padding: .5em;
+            margin: .5em;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido">
+        <h2>Mantenimiento Personas Juridica</h2>
+        <a href="#">Mantenimiento Personas Naturales</a>
+        <a href="#">Mantenimiento Personas Juridicas</a>
+        <table>
+            <tr>
+                <td>RUC</td>
+                <td>RAZON SOCIAL</td>
+                <td>URL</td>
+                <td>DIRECCION</td>
+                <td>TELEFONO</td>
+                <td>CORREO</td>
+            </tr>
+            @foreach (var item in ViewData["listaPJuridica"] as IEnumerable<MantenimientoPersonasSVS.Models.PJuridica>)
+            {
+                <tr>
+                    <td><span>@item.ruc</span></td>
+                    <td><span>@item.razonSocial</span></td>
+                    <td><span>@item.paginaURL</span></td>
+                    <td><span>@item.direccion</span></td>
+                    <td><span>@item.telefono</span></td>
+                    <td><span>@item.correoElectronico</span></td>
+
+                </tr>
+            }
+        </table>
+
+    </div>
+</body>
+</html>
