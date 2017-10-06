@@ -52,7 +52,7 @@
             </div>
             <div class="campo">
                 <label for="fechaNacimiento">Fecha Nacimiento:</label>
-                <input type="text" name="fechaNacimiento" value="@Model.fechaNacimiento" />
+                <input type="text" name="fechaNacimiento" value="@Model.fechaNacimiento.ToString().Split(' ')[0].Split('/')[2]/@Model.fechaNacimiento.ToString().Split(' ')[0].Split('/')[1]/@Model.fechaNacimiento.ToString().Split(' ')[0].Split('/')[0]" />
             </div>
             <div class="campo">
                 <label for="sexo">Sexo:</label>
