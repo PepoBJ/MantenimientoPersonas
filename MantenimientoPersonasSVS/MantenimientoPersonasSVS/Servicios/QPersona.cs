@@ -9,6 +9,21 @@ namespace MantenimientoPersonasSVS.Servicios
 {
     public class QPersona
     {
+        public PJuridica byKey(PJuridica pJuridica)
+        {
+            using (var db = new CtxSQLDBPersona())
+            {
+                return db.PJuridica.Find(pJuridica.ruc);
+            }
+        }
+        public PNatural byKey(PNatural pNatrual)
+        {
+            using (var db = new CtxSQLDBPersona())
+            {
+                return db.PNaturales.Find(pNatrual.dni);
+            }
+        }
+
         public List<PNatural> obtenerTodos(PNatural pNatural)
         {
             using (var db = new CtxSQLDBPersona())
