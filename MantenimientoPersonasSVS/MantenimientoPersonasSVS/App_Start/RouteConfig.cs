@@ -15,8 +15,8 @@ namespace MantenimientoPersonasSVS
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Index", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{parametro}",
+                defaults: new { controller = "Index", action = "Index", parametro = UrlParameter.Optional }
             );
         }
     }

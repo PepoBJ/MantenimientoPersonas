@@ -63,20 +63,12 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.editar();
             return View();
         }
-        public ActionResult Eliminar()
+        public ActionResult Eliminar(string parametro)
         {
-            //muestra el formulario
-
-            return View();
-        }
-         [HttpPost]
-        public ActionResult Eliminar(FormCollection datos)
-        {
-            //muestra el formulario
             PJuridica persona = new PJuridica();
-            persona.ruc = datos["ruc"];
+            persona.ruc = parametro;
             persona.eliminar();
-            return View();
+            return RedirectToAction("Listar", "PJuridica");
         }
 
        

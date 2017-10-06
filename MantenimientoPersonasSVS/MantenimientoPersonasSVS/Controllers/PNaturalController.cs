@@ -83,23 +83,14 @@ namespace MantenimientoPersonasSVS.Controllers
             return View();
         }
 
-        public ActionResult Eliminar(string dni)
+        public ActionResult Eliminar(string parametro)
         {
             PNatural persona = new PNatural();
-            persona.dni = dni;
+            persona.dni = parametro;
             persona.eliminar();
-            //muestra el formulario
-            return RedirectToAction("PNatural", "Listar");
+            return RedirectToAction("Listar", "PNatural");
         }
-        [HttpPost]
-        public ActionResult Eliminar(FormCollection datos)
-        {
-            //inse ala persona
-            PNatural persona = new PNatural();
-            persona.dni = datos["dni"];
-            persona.eliminar();
-            return View();
-        }
+        
 
      
 
