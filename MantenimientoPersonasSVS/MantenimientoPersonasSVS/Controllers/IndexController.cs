@@ -23,9 +23,9 @@ namespace MantenimientoPersonasSVS.Controllers
             persona.telefono ="32423";
             persona.correoElectronico ="bj11";
 
-            //persona.insertar();
+            persona.insertar();
             //persona.eliminar();
-            persona.editar();
+            //persona.editar();
             
             ViewData["lista"] = persona.listar(persona);
             return View();

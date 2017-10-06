@@ -17,6 +17,7 @@ namespace MantenimientoPersonasSVS.DataAccess
 
         public DbSet<PNatural> PNaturales { set; get; }
         public DbSet<PJuridica> PJuridica { set; get; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
