@@ -33,6 +33,36 @@
 <body>
     <div id="contenido">
         <h2>Mantenimiento Personas Natural</h2>
+        <a href="#">Mantenimiento Personas Naturales</a>
+        <a href="#">Mantenimiento Personas Juridicas</a>
+        <table>
+            <tr>
+                <td>DNI</td>
+                <td>NOMBRES</td>
+                <td>APELLIDOS</td>
+                <td>FECHA DE NACIMIENTO</td>
+                <td>SEXO</td>
+                <td>DIREECION</td>
+                <td>TELEFONO</td>
+                <td>CORREO ELECTRONICO</td>
+            </tr>
+            @foreach (var item in ViewData["listaPNatural"] as IEnumerable<MantenimientoPersonasSVS.Models.PNatural>)
+            {
+
+                <tr>
+                    <td><span>@item.dni</span></td>
+                    <td><span>@item.nombrePersona</span></td>
+                    <td><span>@item.apellidoPersona</span></td>
+                    <td><span>@item.fechaNacimiento</span></td>
+                    <td><span>@item.sexo</span></td>
+                    <td><span>@item.direccion</span></td>
+                    <td><span>@item.telefono</span></td>
+                    <td><span>@item.correoElectronico</span></td>
+                </tr>
+
+
+            }
+        </table>
     </div>
 </body>
 </html>
