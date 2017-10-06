@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@foreach (var item in  ViewData["lista"] as IEnumerable<MantenimientoPersonasSVS.Models.PNatural>)
+{
+    <span>@item.nombrePersona</span>    
+}
+    
